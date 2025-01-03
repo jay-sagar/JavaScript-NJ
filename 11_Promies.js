@@ -11,13 +11,15 @@ const GITHUB_API = "https://api.github.com/users/jay-sagar";
 const user = fetch(GITHUB_API)
 .then(response => response.json()).then(data => console.log(data));
 
-createOrder(cart)
-.then(function () {
-    return proceedToPayment();
-})
-.then(function() {
-    return showOrderSummary();
-})
-.then(function() {
-    return updateWallet();
-})
+console.log("end");
+
+// createOrder(cart)
+// .then(function () {
+//     return proceedToPayment();
+// })
+// .then(function() {
+//     return showOrderSummary();
+// })
+// .then(function() {
+//     return updateWallet();
+// })
