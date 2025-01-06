@@ -3,13 +3,10 @@
 
 let counter = 0;
 const expensive = () => {
-    console.log('expensive function.....', counter++);
-}
+    console.log('Expensive function executed...', counter++);
+};
 
-window.addEventListener('resize', betterFunction());
-
-const betterFunction = throttle(expensive, 300);
-
+// Define the throttle function
 function throttle(fn, limit) {
     let flag = true;
     return function () {
@@ -21,5 +18,12 @@ function throttle(fn, limit) {
                 flag = true;
             }, limit);
         }
-    }
+    };
 }
+
+// Create a throttled version of the expensive function
+const betterFunction = throttle(expensive, 300);
+
+// Add the event listener with the throttled function
+window.addEventListener('resize', betterFunction);
+
